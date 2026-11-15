@@ -3,7 +3,7 @@
    ลิงก์ต้นฉบับตรวจแล้วเมื่อ 2026-11-13: เปิดได้ทุกลิงก์ มี 3 ลิงก์ที่หนังสือไม่ตรงสำนัก (ดู warn / alt)
    version และ released ถูกเขียนโดย release.mjs — อย่าแก้ด้วยมือ */
 window.JCT = {
-  version: '1.7.1',
+  version: '1.7.3',
   released: '2026-11-15',
   sources: {
     gb: 'Project Gutenberg',

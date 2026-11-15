@@ -43,14 +43,19 @@
     if (opts.meta) data.meta = { school: (data.meta && data.meta.school) || opts.meta.school, title: opts.meta.title };
     var page = Math.min(data.last || 0, Math.max(0, opts.pages() - 1));
     try { var g = JSON.parse(sessionStorage.getItem('jct:goto') || 'null'); if (g && g.doc === doc) { page = g.page; sessionStorage.removeItem('jct:goto'); } } catch (e) { /* ไม่เป็นไร */ }
-    var attached = -1, editing = {}, mobileLang = opts.langs[0].id, timer = null;
+    var attached = -1, editing = {}, timer = null;
+    var VKEY = 'jct:v1:rdview', mobileLang = 'both';
+    var hasTh = opts.langs.some(function (l) { return l.id === 'th'; });
+    mobileLang = hasTh ? 'th' : opts.langs[0].id;
+    try { var sv = localStorage.getItem(VKEY); if (sv && (sv === 'both' || opts.langs.some(function (l) { return l.id === sv; }))) mobileLang = sv; } catch (e) { /* ไม่เป็นไร */ }
     function persist(msg) { data.t = Date.now(); data.last = page; var ok = save(doc, data); setStatus(ok ? (msg || 'บันทึกแล้ว') : 'บันทึกไว้ชั่วคราวเท่านั้น (เบราว์เซอร์ไม่อนุญาตให้เก็บถาวร)'); }
     function setStatus(t) { var s = root.querySelector('.rd-status'); if (s) s.textContent = t; }
     root.innerHTML =
       '<div class="rd-top"><div class="rd-nav"><button class="btn ghost sm" type="button" data-go="-1">←</button>' +
       '<label class="rd-pg">หน้า <input class="text rd-num" type="number" min="1"> / <span class="rd-total"></span></label>' +
       '<button class="btn ghost sm" type="button" data-go="1">→</button></div>' +
-      '<div class="chips rd-langtabs" role="group" aria-label="ภาษา">' + opts.langs.map(function (l, i) { return '<button class="chip sm" type="button" data-lang="' + l.id + '" aria-pressed="' + (i === 0) + '">' + l.label + '</button>'; }).join('') + '</div></div>' +
+      '<div class="chips rd-langtabs" role="group" aria-label="เลือกภาษาที่จะอ่าน">' + opts.langs.slice().sort(function (a, b) { return (a.id === 'th' ? 0 : 1) - (b.id === 'th' ? 0 : 1); }).map(function (l) { return '<button class="chip sm" type="button" data-lang="' + l.id + '">' + l.label + '</button>'; }).join('') + '<button class="chip sm" type="button" data-lang="both">แสดงคู่กัน</button></div>' +
+      '<button class="btn sm rd-fullbtn" type="button" data-full="1" aria-pressed="false">📖 อ่านเต็มจอ</button></div>' +
       '<h3 class="h3 rd-title"></h3>' +
       '<div class="rd-cols">' + opts.langs.map(function (l) { return '<section class="rd-col" data-col="' + l.id + '"><div class="rd-head"><span class="eyebrow">' + l.label + ' <span class="rd-badge"></span></span><span class="rd-tools"></span></div><div class="rd-paper"><div class="rd-text" lang="' + l.id + '"></div><div class="rd-folio" aria-hidden="true"></div></div></section>'; }).join('') + '</div>' +
       '<div class="rd-foot"><button class="btn ghost sm" type="button" data-go="-1">← หน้าก่อน</button><span class="rd-pgb muted small"></span><button class="btn sm" type="button" data-go="1">หน้าถัดไป →</button></div>' +
@@ -83,7 +88,7 @@
         }
         if (editing[l.id]) { box.innerHTML = '<textarea class="rd-edit" lang="' + l.id + '"></textarea>'; box.querySelector('textarea').value = t; }
         else box.innerHTML = t ? renderMarked(t, marksOf(l.id)) : '<span class="muted">' + (l.empty || 'ยังไม่มีข้อความ') + '</span>';
-        col.classList.toggle('show', l.id === mobileLang);
+        col.classList.toggle('show', mobileLang === 'both' || l.id === mobileLang);
       });
       root.querySelector('.rd-pagenote').value = data.notes[page] || '';
       var ink = root.querySelector('.rd-ink'), pad = root.querySelector('.rd-inkpad');
@@ -93,13 +98,16 @@
       if (window.JCTInk) { var pg0 = page; window.JCTInk.get('rd:' + doc + ':' + page).then(function (v) { if (pg0 === page && v && v.strokes && v.strokes.length) ink.hidden = false; }); }
       // ลายมือบนแผ่นกระดาษ (แถบเครื่องมือด้านขวา)
       if (window.JCTInkPanel && attached !== page) { attached = page; window.JCTInkPanel.attach(root, root.querySelectorAll('.rd-paper'), function (p) { return 'ov:' + doc + ':' + page + ':' + p.parentNode.getAttribute('data-col'); }); }
+      root.querySelectorAll('[data-lang]').forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-lang') === mobileLang ? 'true' : 'false'); });
+      root.querySelector('.rd-cols').setAttribute('data-view', mobileLang === 'both' ? 'both' : 'one');
       bar.hidden = true; pop.hidden = true;
       if (opts.onPage) opts.onPage(page);
     }
     function go(p) { var total = opts.pages(); page = Math.max(0, Math.min(total - 1, p)); data.last = page; save(doc, data); draw(); setStatus(''); }
     root.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-go]'); if (b) { go(page + +b.getAttribute('data-go')); root.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
-      var lb = e.target.closest('[data-lang]'); if (lb) { mobileLang = lb.getAttribute('data-lang'); root.querySelectorAll('[data-lang]').forEach(function (x) { x.setAttribute('aria-pressed', x === lb ? 'true' : 'false'); }); draw(); return; }
+      var b = e.target.closest('[data-go]'); if (b) { go(page + +b.getAttribute('data-go')); if (root.classList.contains('rd-full')) root.scrollTop = 0; else root.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+      var lb = e.target.closest('[data-lang]'); if (lb) { mobileLang = lb.getAttribute('data-lang'); try { localStorage.setItem(VKEY, mobileLang); } catch (x) { /* ไม่เป็นไร */ } draw(); return; }
+      var fb = e.target.closest('[data-full]'); if (fb) { setFull(!root.classList.contains('rd-full')); return; }
       var ed = e.target.closest('[data-ed]');
       if (ed) {
         var lang = ed.closest('[data-col]').getAttribute('data-col'), act = ed.getAttribute('data-ed'), L = opts.langs.filter(function (x) { return x.id === lang; })[0];
@@ -140,6 +148,18 @@
         pop.hidden = true; popMark = null; draw();
       }
     });
+    // โหมดเต็มจอ: ตัวอ่านขยายเต็มหน้าต่างเว็บ กด Esc หรือปุ่มเดิมเพื่อออก
+    function setFull(on) {
+      root.classList.toggle('rd-full', on); document.documentElement.classList.toggle('rd-fullon', on);
+      var b = root.querySelector('.rd-fullbtn'); b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.textContent = on ? '✕ ออกจากเต็มจอ' : '📖 อ่านเต็มจอ';
+      if (on) root.scrollTop = 0; else root.scrollIntoView({ block: 'start' });
+    }
+    // เต็มจอ: ปัดซ้าย/ขวาเพื่อพลิกหน้า ลูกศรซ้าย/ขวาบนคีย์บอร์ดก็ได้
+    var tsx = null, tsy = 0, tst = 0;
+    root.addEventListener('touchstart', function (e) { tsx = null; if (!root.classList.contains('rd-full') || e.touches.length !== 1 || e.target.closest('textarea,input,.rd-bar,.rd-pop,.ipn-cv.ipn-live')) return; tsx = e.touches[0].clientX; tsy = e.touches[0].clientY; tst = Date.now(); }, { passive: true });
+    root.addEventListener('touchend', function (e) { if (tsx === null) return; var t = e.changedTouches[0], dx = t.clientX - tsx, dy = t.clientY - tsy; tsx = null; if (Date.now() - tst > 700 || Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.8 || String(window.getSelection() || '')) return; go(page + (dx < 0 ? 1 : -1)); root.scrollTop = 0; }, { passive: true });
+    document.addEventListener('keydown', function (e) { if (!root.classList.contains('rd-full') || e.target.closest('input,textarea')) return; if (e.key === 'ArrowRight') { e.stopPropagation(); go(page + 1); root.scrollTop = 0; } if (e.key === 'ArrowLeft') { e.stopPropagation(); go(page - 1); root.scrollTop = 0; } }, true);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && root.classList.contains('rd-full') && !document.querySelector('.rd-pop:not([hidden])')) setFull(false); });
     function openPop(m) { popMark = m; pop.hidden = false; root.querySelector('.rd-popq').textContent = '“' + (m.quote || '').slice(0, 160) + ((m.quote || '').length > 160 ? '…' : '') + '”'; root.querySelector('.rd-popnote').value = m.note || ''; root.querySelector('.rd-popnote').focus(); }
     root.querySelector('.rd-ink').addEventListener('toggle', function () { var pad = root.querySelector('.rd-inkpad'); if (this.open && window.JCTInk) window.JCTInk.mount(pad, 'rd:' + doc + ':' + page, { minHeight: 500 }); });
     root.querySelector('.rd-num').addEventListener('change', function () { go((+this.value || 1) - 1); });
