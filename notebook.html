@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>สมุดบันทึก · เจตจำนงของความคิด</title>
+<meta name="description" content="สมุดแยกหน้า: บันทึกอิสระ เขียนมือ การตีความ บทสนทนา คำสอน และเครื่องหมายในตัวบท">
+<meta name="theme-color" content="#060a22">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="notebook" data-hashzone="1">
+<div class="bgfx tone" aria-hidden="true"><img src="img/art/lilies-bg.webp" alt=""></div>
+<header class="top">
+<a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#101a55"/><circle cx="17" cy="17" r="13" fill="none" stroke="#7fb2ee" stroke-width="2" stroke-dasharray="7 3"/><circle cx="17" cy="17" r="9" fill="none" stroke="#bfe1ff" stroke-width="2" stroke-dasharray="5 3"/><circle cx="17" cy="17" r="5.5" fill="#ffd84a"/><circle cx="17" cy="17" r="3" fill="#fff3b0"/></svg><span>เจตจำนงของความคิด</span></a>
+<nav class="nav" aria-label="หน้าแรกและห้องทั้งห้า"><a href="index.html">หน้าแรก</a><a href="schools.html">สำนักคิด</a><a href="poems.html">เจตจำนง</a><a href="brain.html">สมองและสารสื่อประสาท</a><a href="sages.html">พูดคุยกับนักปราชญ์</a><a href="notebook.html" aria-current="page">สมุดบันทึก</a></nav>
+</header>
+<section class="banner art art-lilies">
+<picture><source media="(max-width:760px)" srcset="img/art/lilies-tall.webp"><img src="img/art/lilies-wide.webp" alt="" width="1920" height="800"></picture>
+<div class="copy">
+<p class="kicker">ห้องที่ 5 · ของฉัน</p>
+<h1>สมุดบันทึก</h1>
+<p class="lede">แยกเป็นหน้าตามประเภท เปิดทีละหน้าจากแถบด้านบน</p>
+</div>
+</section>
+<div class="backbar wrap"><a class="btn ghost sm" href="index.html" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>ย้อนกลับ</a><a class="chip sm" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>หน้าแรก</a></div>
+<main class="stack wrap">
+<nav class="subnav nbtabs" aria-label="หน้าในสมุด"><button class="chip" type="button" data-jump="free">บันทึกอิสระ<span class="cnt" data-cnt="free"></span></button><button class="chip" type="button" data-jump="ink">เขียนมือ<span class="cnt" data-cnt="ink"></span></button><button class="chip" type="button" data-jump="interp">การตีความ<span class="cnt" data-cnt="interp"></span></button><button class="chip" type="button" data-jump="chats">บทสนทนา<span class="cnt" data-cnt="chats"></span></button><button class="chip" type="button" data-jump="poems">คำสอน<span class="cnt" data-cnt="poems"></span></button><button class="chip" type="button" data-jump="marks">ตัวบทที่ทำเครื่องหมาย<span class="cnt" data-cnt="marks"></span></button><button class="chip" type="button" data-jump="search">ค้นหา<span class="cnt" data-cnt="search"></span></button></nav>
+<section class="layer nbview" id="free">
+<div class="lhead"><div><p class="eyebrow">หน้า · บันทึกอิสระ</p><h2 class="h2"><span id="n-mode">บันทึกใหม่</span></h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div><button class="btn ghost sm" type="button" id="n-new"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>บันทึกใหม่</button></div>
+<div class="field"><label for="n-title">หัวข้อ</label><input class="text" id="n-title" type="text" placeholder="เช่น สิ่งที่ได้จากเอพิกเททัสวันนี้" autocomplete="off"></div>
+<div class="field"><label for="n-body">บันทึก</label><textarea class="mid" id="n-body" placeholder="เขียนอะไรก็ได้ ความคิด คำถาม สิ่งที่อยากลองทำตามหลักคำสอน"></textarea></div>
+<div class="field"><label for="n-tags">ป้ายกำกับ (คั่นด้วยจุลภาค)</label><input class="text" id="n-tags" type="text" placeholder="เช่น สโตอิก, ความโกรธ" autocomplete="off"></div>
+<div class="btnrow"><button class="btn" type="button" id="n-save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></svg>บันทึก</button><button class="btn warn" type="button" id="n-del" hidden>ลบบันทึกนี้</button></div>
+<p class="status" id="n-status" aria-live="polite"></p>
+<div id="nlist"></div>
+</section>
+<section class="layer nbview" id="ink">
+<div class="lhead"><div><p class="eyebrow">หน้า · เขียนมือ</p><h2 class="h2"><span id="ink-title">เขียนด้วยปากกา</span></h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div><button class="btn ghost sm" type="button" id="ink-new"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>แผ่นใหม่</button></div>
+<p class="muted">เขียนด้วยปากกาหรือเมาส์ได้เหมือนสมุดโน้ต พื้นที่ยาวลงไปเรื่อย ๆ ไม่จำกัด แต่ละแผ่นบันทึกเองในเครื่องและรวมในไฟล์สำรอง</p>
+<div class="chips" id="ink-sheets" role="group" aria-label="แผ่นเขียนมือ"></div>
+<div class="field" id="ink-namebox"><label for="ink-name">ชื่อแผ่น</label><input class="text" id="ink-name" type="text" autocomplete="off" placeholder="เช่น ผังความคิดเรื่องความกลัว"></div>
+<div id="ink-pad"></div>
+<div class="btnrow"><button class="btn warn sm" type="button" id="ink-del">ลบแผ่นนี้</button></div>
+</section>
+<section class="layer lilac nbview" id="interp">
+<div class="lhead"><div><p class="eyebrow">หน้า · การตีความ</p><h2 class="h2">การตีความของฉัน</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<p class="muted">สิ่งที่คุณเขียนในช่องการตีความ สรุป หลักคำสอนในประโยคเดียว และความหมายของคำสอน กดเพื่อกลับไปแก้ที่ห้องเดิม</p>
+<div class="chips" role="group" aria-label="แยกตามที่มา"><button class="chip" type="button" data-src="all" aria-pressed="true">ทั้งหมด</button><button class="chip" type="button" data-src="school" aria-pressed="false">สำนักคิด</button><button class="chip" type="button" data-src="sage" aria-pressed="false">นักปราชญ์</button><button class="chip" type="button" data-src="poem" aria-pressed="false">คำสอน</button></div>
+<div id="ilist"></div>
+</section>
+<section class="layer water nbview" id="chats">
+<div class="lhead"><div><p class="eyebrow">หน้า · บทสนทนา</p><h2 class="h2">บทสนทนากับนักปราชญ์</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<div class="chips" role="group" aria-label="ชนิดบทสนทนา"><button class="chip" type="button" data-ck="live" aria-pressed="true">บทสนทนาที่คุยอยู่</button><button class="chip" type="button" data-ck="saved" aria-pressed="false">สำเนาที่บันทึกลงสมุด</button></div>
+<div id="clist"></div>
+</section>
+<section class="layer nbview" id="poems">
+<div class="lhead"><div><p class="eyebrow">หน้า · คำสอน</p><h2 class="h2">คำสอนและคติของฉัน</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div><a class="btn lily sm" href="poems.html#write"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>เขียนคำสอน</a></div>
+<div id="polist"></div>
+</section>
+<section class="layer dawn nbview" id="marks">
+<div class="lhead"><div><p class="eyebrow">หน้า · ตัวบท</p><h2 class="h2">เครื่องหมาย โน้ต และคำแปลในตัวบท</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<p class="muted">ทุกข้อความที่คุณเน้นสี ขีดเส้นใต้ หรือเขียนโน้ตในหลักการและตัวบทต้นฉบับของสำนักคิด พร้อมบันทึกรายหน้าและคำแปลที่เขียนไว้ กดเพื่อเปิดหน้านั้น</p>
+<div class="chips" role="group" aria-label="ชนิด"><button class="chip" type="button" data-mk="all" aria-pressed="true">ทั้งหมด</button><button class="chip" type="button" data-mk="note" aria-pressed="false">มีโน้ต</button><button class="chip" type="button" data-mk="page" aria-pressed="false">บันทึกรายหน้า</button><button class="chip" type="button" data-mk="tr" aria-pressed="false">คำแปลที่เขียนไว้</button></div>
+<div id="mlist"></div>
+</section>
+<section class="layer nbview" id="search">
+<div class="lhead"><div><p class="eyebrow">หน้า · ค้นหา</p><h2 class="h2">ค้นหาในสมุดทั้งเล่ม</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<div class="tools"><label class="sr" for="nq">ค้นหาในสมุดทั้งเล่ม</label><input class="search" id="nq" type="search" placeholder="ค้นหาในบันทึก การตีความ คำสอน บทสนทนา และโน้ตในตัวบท" autocomplete="off"></div>
+<div id="rlist"></div>
+<p class="muted small">สำรองหรือย้ายสมุดทั้งเล่มไปเครื่องอื่น: <a href="settings.html#backup">ตั้งค่า → สำรองบันทึก</a></p>
+</section>
+</main>
+<footer>
+<div class="wrap foot">
+<div class="footset">
+<a class="btn ghost sm" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/><circle cx="12" cy="12" r="7"/></svg>ตั้งค่า</a>
+</div>
+<div class="footmeta"><span>เจตจำนงของความคิด · สมุดส่วนตัว · <span data-ver></span></span></div>
+</div>
+</footer>
+<nav class="tabs" aria-label="หน้าแรกและห้องทั้งห้า"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>หน้าแรก</span></a><a href="schools.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg><span>สำนักคิด</span></a><a href="poems.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4c-6 0-11 4-13 11l-2 5"/><path d="M7 15c3 0 6-1 8-4"/><path d="M20 4c0 5-2 9-6 11"/></svg><span>เจตจำนง</span></a><a href="brain.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12c0-4 3-7 8-7s8 3 8 7c0 3-2 5-5 5h-1c-1 2-2 3-4 3 0-2 0-3-1-3-3 0-5-2-5-5z"/><path d="M9 9c2 0 3 1 3 3M14 8c0 2 1 3 3 3"/></svg><span>สมอง</span></a><a href="sages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><span>นักปราชญ์</span></a><a href="notebook.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>สมุด</span></a></nav>
+<script src="js/data.js"></script><script src="js/sages.js"></script><script src="js/ai.js"></script><script src="js/ink.js"></script><script src="js/app.js"></script>
+</body>
+</html>

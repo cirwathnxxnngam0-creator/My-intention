@@ -1,0 +1,81 @@
+{
+ "kierkegaard": {
+  "title": "Selections from the Writings of Kierkegaard",
+  "author": "Søren Kierkegaard",
+  "pages": 232
+ },
+ "zarathustra": {
+  "title": "Thus Spake Zarathustra: A Book for All and None",
+  "author": "Friedrich Wilhelm Nietzsche",
+  "pages": 260
+ },
+ "apology": {
+  "title": "Apology",
+  "author": "Plato",
+  "pages": 42
+ },
+ "epicurus": {
+  "title": "Principal Doctrines",
+  "author": "Epicurus",
+  "pages": 5
+ },
+ "utilitarianism": {
+  "title": "Utilitarianism",
+  "author": "John Stuart Mill",
+  "pages": 73
+ },
+ "nicomachean": {
+  "title": "The Nicomachean ethics of Aristotle",
+  "author": "Aristotle",
+  "pages": 280
+ },
+ "enchiridion": {
+  "title": "The Enchiridion",
+  "author": "Epictetus",
+  "pages": 19
+ },
+ "taoteching": {
+  "title": "The Tao Teh King, or the Tao and its Characteristics",
+  "author": "Laozi",
+  "pages": 24
+ },
+ "pragmatism": {
+  "title": "Pragmatism: A New Name for Some Old Ways of Thinking",
+  "author": "William James",
+  "pages": 147
+ },
+ "protagoras": {
+  "title": "Protagoras",
+  "author": "Plato",
+  "pages": 71
+ },
+ "ethics": {
+  "title": "Ethics",
+  "author": "Benedictus de Spinoza",
+  "pages": 223
+ },
+ "treatise": {
+  "title": "Second Treatise of Government",
+  "author": "John Locke",
+  "pages": 154
+ },
+ "dhammapada": {
+  "title": "Dhammapada, a Collection of Verses; Being One of the Canonical Books of the Buddhists",
+  "pages": 27
+ },
+ "discourse": {
+  "title": "Discourse on the Method of Rightly Conducting One's Reason and of Seeking Truth in the Sciences",
+  "author": "René Descartes",
+  "pages": 49
+ },
+ "theodicy": {
+  "title": "Theodicy",
+  "author": "Freiherr von Gottfried Wilhelm Leibniz",
+  "pages": 514
+ },
+ "analects": {
+  "title": "The Analects of Confucius (from the Chinese Classics)",
+  "author": "Confucius",
+  "pages": 75
+ }
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>นักปราชญ์ · เจตจำนงของความคิด</title>
+<meta name="description" content="หลักคำสอนและการสนทนากับนักปราชญ์">
+<meta name="theme-color" content="#060a22">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="sage" data-hashzone="0">
+<div class="bgfx tone" aria-hidden="true"><img src="img/art/bridge-bg.webp" alt=""></div>
+<header class="top">
+<a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#101a55"/><circle cx="17" cy="17" r="13" fill="none" stroke="#7fb2ee" stroke-width="2" stroke-dasharray="7 3"/><circle cx="17" cy="17" r="9" fill="none" stroke="#bfe1ff" stroke-width="2" stroke-dasharray="5 3"/><circle cx="17" cy="17" r="5.5" fill="#ffd84a"/><circle cx="17" cy="17" r="3" fill="#fff3b0"/></svg><span>เจตจำนงของความคิด</span></a>
+<nav class="nav" aria-label="หน้าแรกและห้องทั้งห้า"><a href="index.html">หน้าแรก</a><a href="schools.html">สำนักคิด</a><a href="poems.html">เจตจำนง</a><a href="brain.html">สมองและสารสื่อประสาท</a><a href="sages.html" aria-current="page">พูดคุยกับนักปราชญ์</a><a href="notebook.html">สมุดบันทึก</a></nav>
+</header>
+<section class="banner art art-bridge">
+<picture><source media="(max-width:760px)" srcset="img/art/bridge-tall.webp"><img src="img/art/bridge-wide.webp" alt="" width="1920" height="800"></picture>
+<div class="copy">
+<p class="kicker"><span id="s-years">นักปราชญ์</span></p>
+<h1><span id="s-name">นักปราชญ์</span></h1>
+
+</div>
+</section>
+<div class="backbar wrap"><a class="btn ghost sm" href="sages.html" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>ย้อนกลับ</a><a class="chip sm" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>หน้าแรก</a><a class="chip sm" href="sages.html">นักปราชญ์ทั้งหมด</a></div>
+<main class="stack wrap">
+<section class="layer" id="snf" hidden><h2 class="h2">ไม่พบนักปราชญ์คนนี้</h2><p class="muted">เลือกจากหน้ารายชื่อ</p></section>
+<div class="stack" id="sok" style="padding:0">
+<nav class="subnav" aria-label="หัวข้อย่อย"><button class="chip" type="button" data-jump="teach">หลักคำสอน</button><button class="chip" type="button" data-jump="chat">สนทนา</button><button class="chip" type="button" data-jump="mine">การตีความของฉัน</button><button class="chip" type="button" data-jump="behind">เบื้องหลังการจำลอง</button></nav>
+<section class="layer lilac" id="teach">
+<div class="shead">
+<span class="num xl" data-s="lily" id="s-medal" aria-hidden="true"></span>
+<div><p class="eyebrow">หัวใจ · หลักคำสอน</p><h2 class="h2" id="s-th2"></h2><p class="works" id="s-works"></p><div class="chips" id="s-schools" style="margin-top:10px"></div></div>
+</div>
+<ol class="core" id="s-core"></ol>
+<div class="chips" role="tablist" aria-label="แง่มุมของหลักคำสอน" id="t-tabs"></div>
+<div class="tbody" id="t-body" role="tabpanel"></div>
+</section>
+<section class="layer" id="chat">
+<div class="lhead"><div><p class="eyebrow">หัวข้อย่อย · สนทนา</p><h2 class="h2"><span id="c-title">สนทนา</span></h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div><span class="state" id="c-mode"><i></i></span></div>
+<p class="muted small">บันทึกอัตโนมัติ: ทุกข้อความเก็บไว้ในเครื่องนี้ทันที กลับมาคุยต่อได้เสมอ และบันทึกเป็นสำเนาลงสมุดได้</p>
+<div class="msgs" id="msgs" aria-live="polite"></div>
+<div class="chips" id="starters" role="group" aria-label="คำถามเริ่มต้น"></div>
+<div class="field"><label for="c-in">ข้อความของคุณ</label><textarea class="low" id="c-in" placeholder="เล่าเรื่องที่อยากปรึกษา หรือถามเกี่ยวกับหลักคำสอนของเขา (Ctrl+Enter เพื่อส่ง)"></textarea></div>
+<div class="btnrow">
+<button class="btn lily" id="c-send" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 20 4l-6 16-3-7z"/></svg>ส่ง</button>
+<button class="btn ghost" id="c-tonote" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></svg>บันทึกบทสนทนาลงสมุด</button>
+<button class="btn ghost" id="c-copy" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>คัดลอกคำสั่งไปใช้กับ AI ใดก็ได้</button>
+<button class="btn warn" id="c-clear" type="button">ล้างบทสนทนา</button>
+</div>
+<p class="status" id="c-status" aria-live="polite"></p>
+<div class="field" id="c-promptbox" hidden><label for="c-prompt">คำสั่งสนทนา (คัดลอกทั้งหมดไปวางในแชต AI ที่คุณใช้)</label><textarea class="out" id="c-prompt" readonly></textarea>
+<div class="openai-links"><span class="muted small">เปิดแชต:</span><a class="chip sm" href="https://claude.ai/new" target="_blank" rel="noopener">Claude</a><a class="chip sm" href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a><a class="chip sm" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a><a class="chip sm" href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Copilot</a><a class="chip sm" href="https://chat.deepseek.com/" target="_blank" rel="noopener">DeepSeek</a><a class="chip sm" href="https://grok.com/" target="_blank" rel="noopener">Grok</a></div></div>
+</section>
+<section class="layer dawn" id="mine">
+<div class="lhead"><div><p class="eyebrow">หัวข้อย่อย · ของฉันเอง</p><h2 class="h2">การตีความของฉัน</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<p class="muted">เขียนว่าคุณเข้าใจหลักคำสอนของคนนี้อย่างไร ข้อความนี้ส่งไปประกอบการสนทนา และรวมไว้ในสมุดบันทึก</p>
+<label class="sr" for="s-interp">การตีความของฉันต่อหลักคำสอนนี้</label>
+<textarea class="mid" id="s-interp" placeholder="ฉันเข้าใจว่าหลักคำสอนของเขาคือ… สิ่งที่ฉันอยากถามต่อคือ…"></textarea>
+<p class="status" id="s-status" aria-live="polite"></p>
+</section>
+<section class="layer" id="behind">
+<details class="more"><summary>เบื้องหลังการจำลอง (ปัจจัยรอง): วิธีพูด วิธีให้คำปรึกษา พฤติกรรม ข้อควรระวัง</summary><div class="pgrid" id="s-behind" style="margin-top:14px"></div></details>
+</section>
+</div>
+</main>
+<footer>
+<div class="wrap foot">
+<div class="footset">
+<a class="btn ghost sm" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/><circle cx="12" cy="12" r="7"/></svg>ตั้งค่า</a>
+</div>
+<div class="footmeta"><span>เจตจำนงของความคิด · สมุดส่วนตัว · <span data-ver></span></span></div>
+</div>
+</footer>
+<nav class="tabs" aria-label="หน้าแรกและห้องทั้งห้า"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>หน้าแรก</span></a><a href="schools.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg><span>สำนักคิด</span></a><a href="poems.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4c-6 0-11 4-13 11l-2 5"/><path d="M7 15c3 0 6-1 8-4"/><path d="M20 4c0 5-2 9-6 11"/></svg><span>เจตจำนง</span></a><a href="brain.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12c0-4 3-7 8-7s8 3 8 7c0 3-2 5-5 5h-1c-1 2-2 3-4 3 0-2 0-3-1-3-3 0-5-2-5-5z"/><path d="M9 9c2 0 3 1 3 3M14 8c0 2 1 3 3 3"/></svg><span>สมอง</span></a><a href="sages.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><span>นักปราชญ์</span></a><a href="notebook.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>สมุด</span></a></nav>
+<script src="js/data.js"></script><script src="js/sages.js"></script><script src="js/ai.js"></script><script src="js/ink.js"></script><script src="js/app.js"></script>
+</body>
+</html>

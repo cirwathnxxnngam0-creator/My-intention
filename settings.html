@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ตั้งค่า · เจตจำนงของความคิด</title>
+<meta name="description" content="ติดตั้งแอป ตรวจหาอัปเดต เชื่อม AI และสำรองสมุดบันทึก">
+<meta name="theme-color" content="#060a22">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="settings" data-hashzone="1">
+<div class="bgfx tone" aria-hidden="true"><img src="img/art/poppy-bg.webp" alt=""></div>
+<header class="top">
+<a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#101a55"/><circle cx="17" cy="17" r="13" fill="none" stroke="#7fb2ee" stroke-width="2" stroke-dasharray="7 3"/><circle cx="17" cy="17" r="9" fill="none" stroke="#bfe1ff" stroke-width="2" stroke-dasharray="5 3"/><circle cx="17" cy="17" r="5.5" fill="#ffd84a"/><circle cx="17" cy="17" r="3" fill="#fff3b0"/></svg><span>เจตจำนงของความคิด</span></a>
+<nav class="nav" aria-label="หน้าแรกและห้องทั้งห้า"><a href="index.html">หน้าแรก</a><a href="schools.html">สำนักคิด</a><a href="poems.html">เจตจำนง</a><a href="brain.html">สมองและสารสื่อประสาท</a><a href="sages.html">พูดคุยกับนักปราชญ์</a><a href="notebook.html">สมุดบันทึก</a></nav>
+</header>
+<section class="banner art art-poppy">
+<picture><source media="(max-width:760px)" srcset="img/art/poppy-tall.webp"><img src="img/art/poppy-wide.webp" alt="" width="1920" height="800"></picture>
+<div class="copy">
+<p class="kicker">ท้ายสมุด</p>
+<h1>ตั้งค่า</h1>
+<p class="lede">ดาวน์โหลดและติดตั้งแอป ตรวจหาอัปเดตด้วยตัวเอง เชื่อม AI และสำรองสมุดทั้งเล่ม</p>
+</div>
+</section>
+<div class="backbar wrap"><a class="btn ghost sm" href="index.html" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>ย้อนกลับ</a><a class="chip sm" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>หน้าแรก</a></div>
+<main class="stack wrap">
+<nav class="subnav" aria-label="หัวข้อย่อย"><button class="chip" type="button" data-jump="app">แอป</button><button class="chip" type="button" data-jump="update">อัปเดต</button><button class="chip" type="button" data-jump="ai">เชื่อม AI</button><button class="chip" type="button" data-jump="backup">สำรองบันทึก</button></nav>
+<section class="layer water" id="app">
+<div class="lhead"><div><p class="eyebrow">ตั้งค่า · แอป</p><h2 class="h2">ดาวน์โหลดและติดตั้ง</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<div class="split">
+<div>
+<div class="state" id="state" aria-live="polite"><i></i>กำลังตรวจ…</div>
+<dl class="kv" style="margin-top:12px"><dt>เวอร์ชันที่ใช้อยู่</dt><dd data-ver></dd><dt>ออกเมื่อ</dt><dd data-rel></dd><dt>บันทึกเก็บที่</dt><dd>เบราว์เซอร์ของเครื่องนี้</dd></dl>
+</div>
+<div class="btngrid">
+<button class="btn" id="install" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>ติดตั้งเป็นแอป</button>
+<a class="btn ghost" id="zip" href="download/jetchamnong-site.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>ดาวน์โหลดไฟล์เว็บ (ZIP)</a>
+</div>
+</div>
+<p class="status" id="imsg" aria-live="polite"></p>
+<label class="switch"><input type="checkbox" id="motion"> <span>ให้ภาพท้องฟ้าและสระบัวขยับช้า ๆ (ปิดไว้ถ้าเครื่องกระตุก)</span></label>
+<details class="more"><summary>วิธีติดตั้งด้วยตนเอง</summary>
+<ol class="steps" style="margin-top:8px">
+<li><div><b>ดาวน์โหลดไฟล์เว็บ (ZIP)</b> แล้วแตกไฟล์ไว้ในเครื่อง</div></li>
+<li><div><b>เปิด <code>index.html</code> ได้ทันที</b> อ่านและเขียนบันทึกได้เลย</div></li>
+<li><div><b>ติดตั้งเป็นแอปและใช้ออฟไลน์เต็มรูปแบบ</b> ต้องเปิดผ่านเซิร์ฟเวอร์ในเครื่อง: เปิด Terminal ในโฟลเดอร์ พิมพ์ <code>npx serve</code> หรือ <code>python -m http.server 8080</code> แล้วเปิดที่อยู่ที่ขึ้นมา</div></li>
+<li><div><b>กด “ติดตั้งเป็นแอป”</b> ด้านบน หรือไอคอนติดตั้งในแถบที่อยู่ (Chrome, Edge) หรือ “เพิ่มลงหน้าจอโฮม” บนมือถือ</div></li>
+</ol>
+<p class="muted small">บันทึกผูกกับที่อยู่ที่เปิด การเปิดจากไฟล์โดยตรงกับการเปิดผ่าน localhost จึงมีบันทึกคนละชุด ใช้สำรองและนำเข้าด้านล่างเพื่อย้าย</p>
+</details>
+</section>
+<section class="layer" id="update">
+<div class="lhead"><div><p class="eyebrow">ตั้งค่า · อัปเดต</p><h2 class="h2">ตรวจหาอัปเดตเอง</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<p class="muted">แอปจะไม่อัปเดตเอง จะตรวจเมื่อคุณกดปุ่มเท่านั้น และจะเปลี่ยนเวอร์ชันเมื่อคุณกดยืนยัน บันทึกของคุณไม่ถูกแตะ</p>
+<div class="state" id="ustate" aria-live="polite"><i></i><span id="utext">ยังไม่ได้ตรวจ</span></div>
+<ul class="small muted" id="unotes" hidden></ul>
+<div class="btngrid">
+<button class="btn" id="ucheck" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>ตรวจหาอัปเดต</button>
+<button class="btn lily" id="uapply" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>อัปเดตเดี๋ยวนี้</button>
+</div>
+<p class="status" id="umsg" aria-live="polite"></p>
+</section>
+<section class="layer lilac" id="ai">
+<div class="lhead"><div><p class="eyebrow">ตั้งค่า · นักปราชญ์</p><h2 class="h2">เชื่อม AI</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<p class="muted">เลือกผู้ให้บริการ AI แล้วใส่กุญแจ API ของคุณ นักปราชญ์จะตอบในหน้าเว็บได้เลย ใช้ได้ทั้ง Claude, ChatGPT, Gemini, OpenRouter (รวมโมเดลจากหลายร้อยแห่งด้วยกุญแจเดียว) และบริการใดก็ได้ที่ใช้รูปแบบเดียวกับ OpenAI รวมถึงโมเดลที่รันบนเครื่องคุณเอง ถ้าไม่เชื่อม ยังกด “คัดลอกคำสั่ง” ไปวางในแชต AI ใดก็ได้</p>
+<div class="provgrid" id="k-provs" role="group" aria-label="ผู้ให้บริการ AI"></div>
+<form id="k-form" autocomplete="off">
+<div class="field" id="k-basebox" hidden><label for="k-base">ที่อยู่ API (base URL ลงท้ายด้วย /v1)</label><input class="text" id="k-base" type="url" placeholder="เช่น http://localhost:11434/v1" autocomplete="off" spellcheck="false" list="k-bases"><datalist id="k-bases"></datalist></div>
+<div class="split">
+<div class="field"><label for="k-key" id="k-keylabel">กุญแจ API</label><input class="text" id="k-key" type="password" placeholder="" autocomplete="off" spellcheck="false"></div>
+<div class="field"><label for="k-model">ชื่อโมเดล</label><input class="text" id="k-model" type="text" placeholder="" autocomplete="off" spellcheck="false" list="k-models"><datalist id="k-models"></datalist></div>
+</div>
+</form>
+<p class="muted small" id="k-hint"></p>
+<div class="btngrid">
+<button class="btn lily" id="k-save" type="button">บันทึกและใช้ตัวนี้</button>
+<button class="btn ghost" id="k-test" type="button">ทดสอบการเชื่อมต่อ</button>
+<button class="btn warn" id="k-del" type="button">ลบกุญแจของตัวนี้</button>
+</div>
+<p class="status" id="kmsg" aria-live="polite"></p>
+<p class="note pink">กุญแจเก็บในเบราว์เซอร์ของเครื่องนี้เท่านั้น ไม่รวมอยู่ในไฟล์สำรอง และถูกส่งตรงไปที่ผู้ให้บริการที่คุณเลือกเมื่อกดส่งข้อความเท่านั้น อย่าใส่กุญแจในเครื่องที่ใช้ร่วมกับผู้อื่น ค่าใช้จ่ายคิดตามบัญชีของคุณกับผู้ให้บริการนั้น</p>
+</section>
+<section class="layer" id="backup">
+<div class="lhead"><div><p class="eyebrow">ตั้งค่า · สมุดทั้งเล่ม</p><h2 class="h2">สำรองและนำเข้า</h2><svg class="brush" viewBox="0 0 150 14" aria-hidden="true"><path d="M2 8 C 24 0, 40 14, 62 7 S 108 0, 148 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M10 11 C 40 6, 70 13, 120 9" fill="none" stroke="#7fb2ee" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></svg></div></div>
+<p class="muted">มีบันทึกแล้ว: <b id="ncount" style="color:var(--cream)"></b></p>
+<div class="btngrid">
+<button class="btn" id="export" type="button">ส่งออกเป็นไฟล์</button>
+<button class="btn ghost" id="copy" type="button">คัดลอกเป็นข้อความ</button>
+<label class="btn ghost" for="import" style="cursor:pointer">นำเข้าจากไฟล์</label>
+<button class="btn ghost" id="paste" type="button">นำเข้าจากข้อความในกล่อง</button>
+</div>
+<input id="import" class="sr" type="file" accept="application/json,.json">
+<label class="sr" for="out">ข้อความสำรองบันทึก</label>
+<textarea class="out" id="out" placeholder="ข้อความสำรองจะปรากฏที่นี่ หรือวางข้อความที่เคยส่งออกไว้เพื่อนำเข้า"></textarea>
+<p class="status" id="msg" aria-live="polite"></p>
+</section>
+</main>
+<footer>
+<div class="wrap foot">
+<div class="footset">
+<a class="btn ghost sm" href="settings.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/><circle cx="12" cy="12" r="7"/></svg>ตั้งค่า</a>
+</div>
+<div class="footmeta"><span>เจตจำนงของความคิด · สมุดส่วนตัว · <span data-ver></span></span></div>
+</div>
+</footer>
+<nav class="tabs" aria-label="หน้าแรกและห้องทั้งห้า"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>หน้าแรก</span></a><a href="schools.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg><span>สำนักคิด</span></a><a href="poems.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4c-6 0-11 4-13 11l-2 5"/><path d="M7 15c3 0 6-1 8-4"/><path d="M20 4c0 5-2 9-6 11"/></svg><span>เจตจำนง</span></a><a href="brain.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12c0-4 3-7 8-7s8 3 8 7c0 3-2 5-5 5h-1c-1 2-2 3-4 3 0-2 0-3-1-3-3 0-5-2-5-5z"/><path d="M9 9c2 0 3 1 3 3M14 8c0 2 1 3 3 3"/></svg><span>สมอง</span></a><a href="sages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><span>นักปราชญ์</span></a><a href="notebook.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>สมุด</span></a></nav>
+<script src="js/data.js"></script><script src="js/sages.js"></script><script src="js/ai.js"></script><script src="js/ink.js"></script><script src="js/app.js"></script>
+</body>
+</html>
