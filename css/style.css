@@ -545,3 +545,46 @@ html.ipn-on .zonebar{padding-right:84px}@media (max-width:760px){html.ipn-on .zo
 /* 1.7.1 พื้นหลังหลักเห็นภาพวาดชัดขึ้น (ไม่เทา) */
 .bgfx.tone img{opacity:1}
 .bgfx.tone::after{background:linear-gradient(180deg,rgba(6,10,34,.18) 0,rgba(6,10,34,.32) 45%,rgba(6,10,34,.5) 100%)}
+
+/* 1.7.2 ใช้พื้นที่จอให้คุ้ม + ตัวอ่านเต็มจอ + เลือกภาษา */
+.wrap{max-width:1640px;padding:0 clamp(12px,2.2vw,36px)}
+.layer{padding:clamp(18px,2.2vw,34px)}
+.v3wrap{grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr)}
+.v3d{aspect-ratio:auto;height:clamp(340px,74vh,860px)}
+.rinfo{max-height:clamp(340px,74vh,860px)}
+.rd-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.rd-langtabs{display:flex!important}
+.rd-fullbtn{margin-left:auto}
+.rd-cols[data-view=one]{grid-template-columns:1fr}
+.rd-cols[data-view=one] .rd-col:not(.show){display:none}
+.rd-cols[data-view=one] .rd-paper{max-width:1000px;margin:0 auto}
+.rd-cols .rd-col:not(.show){display:none}
+.rd-full{position:fixed;inset:0;z-index:50;overflow:auto;margin:0!important;border-radius:0!important;padding:14px clamp(12px,2.4vw,40px) 90px;background:rgba(5,8,24,.97)}
+.rd-full .rd-top{position:sticky;top:-14px;z-index:5;margin:-14px calc(-1*clamp(12px,2.4vw,40px)) 10px;padding:10px clamp(12px,2.4vw,40px);background:rgba(5,8,24,.97);border-bottom:1px solid var(--line)}
+.rd-full .rd-paper .rd-text{max-width:80ch}
+html.rd-fullon{overflow:hidden}
+html.rd-fullon .zonebar,html.rd-fullon .top,html.rd-fullon .tabs{visibility:hidden}
+html.ipn-on .rd-full{padding-right:96px}
+@media (max-width:760px){.rd-cols[data-view=both]{grid-template-columns:1fr}.rd-full{padding:10px 8px 90px}html.ipn-on .rd-full{padding-right:70px}.rd-fullbtn{margin-left:0}}
+
+/* 1.7.3 อ่านเต็มจอแบบนิยาย: กระดาษเต็มหน้าต่าง ตัวอักษรใหญ่ ภาษาเดียว */
+.rd-fullbtn{box-shadow:3px 3px 0 var(--gold)}
+.rd-full{padding:0 0 84px;background:#0b0f22}
+.rd-full .rd-top{top:0;margin:0 0 0;padding:8px clamp(10px,2vw,28px)}
+.rd-full .rd-title{padding:10px clamp(14px,3vw,40px) 4px;font-size:clamp(17px,1.4vw,22px)}
+.rd-full .rd-cols{gap:10px;padding:0 clamp(0px,1.5vw,24px)}
+.rd-full .rd-col{border:0;background:transparent;padding:0}
+.rd-full .rd-head{display:none}
+.rd-full .rd-cols[data-view=one] .rd-paper{max-width:none}
+.rd-full .rd-paper{aspect-ratio:auto;min-height:calc(100vh - 120px);min-height:calc(100dvh - 120px);border-radius:4px;padding:clamp(24px,4vw,64px) clamp(18px,5vw,90px) 60px}
+.rd-full .rd-paper .rd-text,.rd-full .rd-paper .rd-text[lang=en]{max-width:none;font-size:clamp(19px,1.45vw,26px);line-height:1.9}
+.rd-full .rd-cols[data-view=both] .rd-paper .rd-text{font-size:clamp(17px,1.1vw,21px)}
+.rd-full .rd-foot,.rd-full .rd-pnote,.rd-full .rd-ink,.rd-full .rd-inkhint,.rd-full .rd-status{padding-left:clamp(14px,3vw,40px);padding-right:clamp(14px,3vw,40px)}
+@media (max-width:760px){
+  .rd-full .rd-top{gap:6px}
+  .rd-full .rd-paper{min-height:calc(100dvh - 150px);padding:22px 18px 50px;border-radius:0}
+  .rd-full .rd-paper .rd-text,.rd-full .rd-paper .rd-text[lang=en]{font-size:19px;line-height:1.85}
+  .rd-full .rd-cols{padding:0}
+}
+@media (max-width:760px){.rd-full .rd-top{position:sticky}.rd-full .rd-fullbtn{position:absolute;right:8px;top:8px;min-height:40px;padding:0 12px;font-size:15px}}
+@media (max-width:760px){.rd-full .rd-fullbtn{font-size:0;width:44px;padding:0}.rd-full .rd-fullbtn::before{content:"✕";font-size:20px}}
