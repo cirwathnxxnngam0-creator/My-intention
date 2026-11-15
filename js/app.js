@@ -179,7 +179,7 @@
       sx = null;
       if (e.touches.length !== 1) return;
       var t = e.target;
-      if (t.closest && t.closest('input,textarea,select,canvas,.v3d,.ink-paper,.tablewrap,.rd-bar,.subnav,.chips')) return;
+      if (t.closest && t.closest('input,textarea,select,canvas,.v3d,.ink-paper,.tablewrap,.rd-bar,.subnav,.chips,.rd-full')) return;
       sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now();
     }, { passive: true });
     document.addEventListener('touchend', function (e) {
